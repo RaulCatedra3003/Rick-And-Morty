@@ -22,9 +22,9 @@ export const home = {
     $('#hamburguer').on('click', actions.toggleSideBar);
   },
   showSideBar: function () {
-    $('.side-bar').css({ left: '0', transition: 'left 1s linear' });
+    $('.side-bar').css({ left: '0', transition: 'left 1s ease-out' });
   },
   hiddeSideBar: function () {
-    $('.side-bar').css({ left: '-100%', transition: 'left 1s linear' });
+    $('.side-bar').css({ left: '-100%', transition: 'left 1s ease-in' });
   },
 };
