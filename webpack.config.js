@@ -22,6 +22,12 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(woff|woff2|ttf)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
     ],
   },
   devServer: {

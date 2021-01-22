@@ -1,4 +1,6 @@
+import { store } from '../store/store';
+
 export const renderView = (fragment, element = '#root') => {
-  $(element).html(fragment);
-  addEventListeners(status);
+  $(element).html(fragment.html);
+  fragment.addEventListeners();
 };
