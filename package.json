@@ -4,7 +4,9 @@
   "description": "Web with Rick and Morty series info",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "start": "webpack serve --host 127.0.0.1 --port 8080",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
