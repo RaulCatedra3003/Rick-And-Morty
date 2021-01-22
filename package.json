@@ -1,0 +1,30 @@
+{
+  "name": "rick-and-morty",
+  "version": "1.0.0",
+  "description": "Web with Rick and Morty series info",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaulCatedra3003/Rick-And-Morty.git"
+  },
+  "author": "Raúl Cátedra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaulCatedra3003/Rick-And-Morty/issues"
+  },
+  "homepage": "https://github.com/RaulCatedra3003/Rick-And-Morty#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
