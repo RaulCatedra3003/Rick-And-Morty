@@ -71,7 +71,14 @@ button {
   position: absolute;
   width: 320px;
   height: 100vh;
-  background-color: rgba(64, 224, 208, 0.466);
+  background: var(--light-blue);
+  background: linear-gradient(
+    to right bottom,
+    rgba(45, 212, 205, 0.7),
+    rgba(45, 212, 205, 0.3)
+  );
+  z-index: 2;
+  backdrop-filter: blur(1.5rem);
   left: -100%;
 }
 .content {
