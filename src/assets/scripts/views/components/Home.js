@@ -12,8 +12,8 @@ export const home = {
         <p class="title__subtitle">World</p>
       </section>
     </header>
+    <nav class="side-bar"></nav>
     <section class="main">
-      <nav class="side-bar"></nav>
       <section class="content"></section>
     </section>`;
     return template;

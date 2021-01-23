@@ -8,17 +8,17 @@
 
 /* css variables */
 :root {
-  --violete: #95acff;
-  --orange: #c18082;
-  --clear-blue: #04d1ff;
-  --light-blue: #2dd4cd;
-  --text-blue: #007e8a;
+  --violete: #cb9dbf;
+  --orange: #da766e;
+  --clear-blue: #05d1ff;
+  --light-blue: #c1e8ec;
+  --text-blue: #29acc0;
 }
 
 /* General styles */
 header {
   width: 100%;
-  background-color: var(--violete);
+  background-color: var(--light-blue);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,24 +66,32 @@ button {
   background-position-y: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .side-bar {
   position: absolute;
   width: 320px;
   height: 100vh;
-  background: var(--light-blue);
   background: linear-gradient(
     to right bottom,
-    rgba(45, 212, 205, 0.7),
-    rgba(45, 212, 205, 0.3)
+    rgba(203, 157, 191, 1),
+    rgba(203, 157, 191, 0.6)
   );
   z-index: 2;
-  backdrop-filter: blur(1.5rem);
   left: -100%;
 }
 .content {
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(238, 130, 238, 0.623);
+  width: 80%;
+  height: 80%;
+  background: var(--light-blue);
+  background: linear-gradient(
+    to right bottom,
+    rgba(5, 209, 255, 0.7),
+    rgba(5, 209, 255, 0.4)
+  );
+  backdrop-filter: blur(1.5rem);
+  border-radius: 30px;
   display: none;
 }
