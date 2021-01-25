@@ -27,9 +27,28 @@ button {
   min-width: 44px;
   min-height: 44px;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 .bx {
   font-size: 2em;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #05d1ff71;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #05d1ff71;
 }
 
 /* Home styles */
@@ -81,11 +100,43 @@ button {
   );
   z-index: 2;
   left: -100%;
+  overflow-y: scroll;
+}
+.side-bar__buttons {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.side-bar__buttons-page {
+  color: var(--text-blue);
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.side-bar__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.side-bar__episode {
+  margin: 5px 0;
+  text-align: left;
+  width: 80%;
+}
+.side-bar__episode-name {
+  padding-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--text-blue);
+}
+.side-bar__episode-episode {
+  padding-top: 5px;
 }
 .content {
-  width: 80%;
-  height: 80%;
-  background: var(--light-blue);
+  /* todo añadir animacion para width y height tras cambiar el display */
+  width: 0%;
+  height: 0%;
   background: linear-gradient(
     to right bottom,
     rgba(5, 209, 255, 0.7),
@@ -93,5 +144,28 @@ button {
   );
   backdrop-filter: blur(1.5rem);
   border-radius: 30px;
-  display: none;
+  position: absolute;
+  top: 80px;
+}
+
+/* Keyframes styles */
+@keyframes showModal {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 80%;
+    height: 80%;
+  }
+}
+@keyframes hiddeModal {
+  0% {
+    width: 80%;
+    height: 80%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+  }
 }

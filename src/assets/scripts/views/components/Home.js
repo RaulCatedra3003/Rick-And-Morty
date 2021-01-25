@@ -12,7 +12,9 @@ export const home = {
         <p class="title__subtitle">World</p>
       </section>
     </header>
-    <nav class="side-bar"></nav>
+    <nav class="side-bar">
+      <section class="side-bar__content" id="sideBarContent"></section>
+    </nav>
     <section class="main">
       <section class="content"></section>
     </section>`;
@@ -26,5 +28,13 @@ export const home = {
   },
   hiddeSideBar: function () {
     $('.side-bar').css({ left: '-100%', transition: 'left 1s ease-in' });
+  },
+  showModal: function () {
+    $('.content').css({ animation: 'showModal 2s ease-out' });
+    $('.content').css({ width: '80%', height: '80%' });
+  },
+  hiddeModal: function () {
+    $('.content').css({ animation: 'hiddeModal 2s ease-in' });
+    $('.content').css({ width: '0%', height: '0%' });
   },
 };
