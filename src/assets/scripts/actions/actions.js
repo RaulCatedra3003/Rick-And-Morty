@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { get } from '../API-utils/get';
 import { dispacher } from '../dispatcher/dispatcher';
 import { store } from '../store/store';
@@ -23,8 +24,16 @@ export const actions = {
       });
   },
   showEpisode: function (e) {
-    get.data($(e.target).parent().data('episode')).then(data => {
-      dispacher.emit('showEpisode', data);
+    get.data($(e.target).parent().data('episode')).then(data1 => {
+      const episode = data1;
+      const charactersPromises = [];
+      episode.data.characters.forEach(element => {
+        charactersPromises.push(axios.get(element));
+      });
+      get.all(charactersPromises).then(data2 => {
+        episode.data.characters = data2;
+        dispacher.emit('showEpisode', episode);
+      });
     });
   },
 };

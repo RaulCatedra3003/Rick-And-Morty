@@ -16,7 +16,10 @@ export const home = {
       <section class="side-bar__content" id="sideBarContent"></section>
     </nav>
     <section class="main">
-      <section class="content"></section>
+      <section class="content">
+        <section class="content-principal" id="modalPrincipal" style="display: none;"></section>
+        <section class="content-list" id="modalList" style="display: none;"></section>
+      </section>
     </section>`;
     return template;
   },
@@ -30,11 +33,19 @@ export const home = {
     $('.side-bar').css({ left: '-100%', transition: 'left 1s ease-in' });
   },
   showModal: function () {
-    $('.content').css({ animation: 'showModal 2s ease-out' });
+    $('.content').css({ animation: 'showModal 1s ease-out' });
     $('.content').css({ width: '80%', height: '80%' });
   },
   hiddeModal: function () {
-    $('.content').css({ animation: 'hiddeModal 2s ease-in' });
+    $('.content').css({ animation: 'hiddeModal 1s ease-in' });
     $('.content').css({ width: '0%', height: '0%' });
+  },
+  hiddeContent: function () {
+    $('.content-principal').fadeOut();
+    $('.content-list').fadeOut();
+  },
+  showContent: function () {
+    $('.content-principal').fadeIn();
+    $('.content-list').fadeIn();
   },
 };

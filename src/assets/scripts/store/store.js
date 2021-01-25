@@ -1,6 +1,8 @@
 import { renderView } from '../views/renderview';
 import { home } from '../views/components/Home';
 import { sidebarList } from '../views/components/SidebarList';
+import { episode } from '../views/components/Episode';
+import { charactersList } from '../views/components/Characters-list';
 
 export const store = {
   appState: {
@@ -44,25 +46,45 @@ export const store = {
     },
     showEpisode: function (action) {
       if (action.name === 'showEpisode') {
-        console.log(action.payload);
         if (store.appState.modal === 'open') {
           store.appState.modal = 'close';
           store.appState.sideBar = 'open';
           home.hiddeSideBar();
-          //todo introducir datos del capitulo en el modal
+          renderView(episode, episode.html(action.payload), '#modalPrincipal');
+          renderView(
+            charactersList,
+            charactersList.html(action.payload),
+            '#modalList',
+          );
           home.showModal();
+          setTimeout(function () {
+            home.showContent();
+          }, 1000);
         } else if (store.appState.modal === 'close') {
           store.appState.modal = 'open';
           store.appState.sideBar = 'open';
           home.hiddeSideBar();
+          home.hiddeContent();
           home.hiddeModal();
           setTimeout(function () {
             store.appState.modal = 'close';
             store.appState.sideBar = 'open';
             home.hiddeSideBar();
-            //todo introducir datos del capitulo en el modal
+            renderView(
+              episode,
+              episode.html(action.payload),
+              '#modalPrincipal',
+            );
+            renderView(
+              charactersList,
+              charactersList.html(action.payload),
+              '#modalList',
+            );
             home.showModal();
-          }, 2000);
+            setTimeout(function () {
+              home.showContent();
+            }, 1000);
+          }, 1300);
         }
       }
     },

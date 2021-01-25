@@ -7,4 +7,7 @@ export const get = {
   data: function (url) {
     return axios.get(`${url}`);
   },
+  all: function (array) {
+    return axios.all(array);
+  },
 };
