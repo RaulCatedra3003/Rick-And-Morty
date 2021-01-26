@@ -7,9 +7,9 @@ export const episode = {
           <p class="modal-episode__name">${name}</p>
           <p class="modal-episode__code">${episode}</p>
           <p class="modal-episode__air_date">${air_date}</p>
-          <hr>
-          <h2 class="modal-episode__list-title">Characters:</h2>
-        </section>`;
+        </section>
+        <hr>
+        <h2 class="modal-episode__list-title">Characters:</h2>`;
       return template;
     };
     $(fragment).append(episode(data.data));

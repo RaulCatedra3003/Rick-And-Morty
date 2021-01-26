@@ -3,6 +3,8 @@ import { home } from '../views/components/Home';
 import { sidebarList } from '../views/components/SidebarList';
 import { episode } from '../views/components/Episode';
 import { charactersList } from '../views/components/Characters-list';
+import { character } from '../views/components/Character';
+import { episodesList } from '../views/components/Episodes-list';
 
 export const store = {
   appState: {
@@ -86,6 +88,35 @@ export const store = {
             }, 1000);
           }, 1300);
         }
+      }
+    },
+    showCharacter: function (action) {
+      if (action.name === 'showCharacter') {
+        charactersList.removeEventListeners();
+        store.appState.modal = 'open';
+        store.appState.sideBar = 'open';
+        home.hiddeSideBar();
+        home.hiddeContent();
+        home.hiddeModal();
+        setTimeout(function () {
+          store.appState.modal = 'close';
+          store.appState.sideBar = 'open';
+          home.hiddeSideBar();
+          renderView(
+            character,
+            character.html(action.payload),
+            '#modalPrincipal',
+          );
+          renderView(
+            episodesList,
+            episodesList.html(action.payload),
+            '#modalList',
+          );
+          home.showModal();
+          setTimeout(function () {
+            home.showContent();
+          }, 1000);
+        }, 1300);
       }
     },
   },
