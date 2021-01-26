@@ -16,6 +16,9 @@
 }
 
 /* General styles */
+body {
+  font-family: 'Montserrat';
+}
 header {
   width: 100%;
   background-color: var(--light-blue);
@@ -108,8 +111,8 @@ hr {
   height: 100vh;
   background: linear-gradient(
     to right bottom,
-    rgba(203, 157, 191, 1),
-    rgba(203, 157, 191, 0.6)
+    rgba(193, 232, 236, 1),
+    rgba(193, 232, 236, 0.6)
   );
   z-index: 2;
   left: -100%;
@@ -122,7 +125,7 @@ hr {
   justify-content: space-between;
 }
 .side-bar__buttons-page {
-  color: var(--text-blue);
+  color: #070707;
   font-size: 1.4em;
   font-weight: bold;
 }
@@ -141,7 +144,7 @@ hr {
   padding-bottom: 5px;
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--text-blue);
+  color: #070707;
 }
 .side-bar__episode-episode {
   padding-top: 5px;
@@ -229,7 +232,8 @@ hr {
 .characters-content__status {
   margin-top: 5px;
 }
-.modal-character {
+.modal-character,
+.modal-origin {
   color: #070707;
   text-align: left;
   margin: 10px 60px;
@@ -248,13 +252,16 @@ hr {
   background-repeat: no-repeat;
   border-radius: 10px;
 }
-.character-content__name {
+.character-content__name,
+.modal-origin__name {
   font-size: 1.4em;
   font-weight: bold;
   padding: 5px 0;
 }
 .character-content__status,
-.character-content__gender {
+.character-content__gender,
+.modal-origin__type,
+.modal-origin__dimension {
   margin: 5px 0;
 }
 .character-content__origin {

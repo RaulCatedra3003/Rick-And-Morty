@@ -1,3 +1,5 @@
+import { actions } from '../../actions/actions';
+
 export const character = {
   html: function (data) {
     const fragment = $(document.createDocumentFragment());
@@ -29,7 +31,6 @@ export const character = {
     return fragment;
   },
   addEventListeners: function () {
-    //Todo añadir escuchador al origen
-    console.log('añadir escuchador al origen');
+    $('.character-content__origin').on('click', actions.showOrigin);
   },
 };

@@ -18,8 +18,7 @@ export const actions = {
       .then(data => {
         dispacher.emit('changePage', data);
       })
-      .catch(error => {
-        console.log(error);
+      .catch(() => {
         console.log('theres no more episodes.... yet!');
       });
   },
@@ -46,6 +45,19 @@ export const actions = {
       get.all(episodesPromises).then(data2 => {
         character.data.episode = data2;
         dispacher.emit('showCharacter', character);
+      });
+    });
+  },
+  showOrigin: function (e) {
+    get.data($(e.target).data('origin')).then(data1 => {
+      const origin = data1;
+      const residentsPromises = [];
+      origin.data.residents.forEach(element => {
+        residentsPromises.push(axios.get(element));
+      });
+      get.all(residentsPromises).then(data2 => {
+        origin.data.residents = data2;
+        dispacher.emit('showOrigin', origin);
       });
     });
   },

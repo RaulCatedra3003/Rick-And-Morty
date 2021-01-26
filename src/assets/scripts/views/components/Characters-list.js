@@ -14,9 +14,11 @@ export const charactersList = {
         </button>`;
       return template;
     };
-    data.data.characters.forEach(element => {
-      $(fragment).append(character(element.data));
-    });
+    data.data[data.data.characters ? 'characters' : 'residents'].forEach(
+      element => {
+        $(fragment).append(character(element.data));
+      },
+    );
     return fragment;
   },
   addEventListeners: function () {

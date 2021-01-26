@@ -5,6 +5,8 @@ import { episode } from '../views/components/Episode';
 import { charactersList } from '../views/components/Characters-list';
 import { character } from '../views/components/Character';
 import { episodesList } from '../views/components/Episodes-list';
+import { origin } from '../views/components/Origin';
+import { helper } from '../helpers/helper';
 
 export const store = {
   appState: {
@@ -49,77 +51,21 @@ export const store = {
     showEpisode: function (action) {
       if (action.name === 'showEpisode') {
         if (store.appState.modal === 'open') {
-          store.appState.modal = 'close';
-          store.appState.sideBar = 'open';
-          home.hiddeSideBar();
-          renderView(episode, episode.html(action.payload), '#modalPrincipal');
-          renderView(
-            charactersList,
-            charactersList.html(action.payload),
-            '#modalList',
-          );
-          home.showModal();
-          setTimeout(function () {
-            home.showContent();
-          }, 1000);
+          helper.closeSidebarAndRender(action, episode, charactersList);
         } else if (store.appState.modal === 'close') {
-          store.appState.modal = 'open';
-          store.appState.sideBar = 'open';
-          home.hiddeSideBar();
-          home.hiddeContent();
-          home.hiddeModal();
-          setTimeout(function () {
-            store.appState.modal = 'close';
-            store.appState.sideBar = 'open';
-            home.hiddeSideBar();
-            renderView(
-              episode,
-              episode.html(action.payload),
-              '#modalPrincipal',
-            );
-            renderView(
-              charactersList,
-              charactersList.html(action.payload),
-              '#modalList',
-            );
-            home.showModal();
-            setTimeout(function () {
-              home.showContent();
-            }, 1000);
-          }, 1300);
+          helper.animateAndRender(action, episode, charactersList);
         }
       }
     },
     showCharacter: function (action) {
       if (action.name === 'showCharacter') {
-        store.appState.modal = 'open';
-        store.appState.sideBar = 'open';
-        home.hiddeSideBar();
-        home.hiddeContent();
-        home.hiddeModal();
-        setTimeout(function () {
-          store.appState.modal = 'close';
-          store.appState.sideBar = 'open';
-          home.hiddeSideBar();
-          renderView(
-            character,
-            character.html(action.payload),
-            '#modalPrincipal',
-          );
-          renderView(
-            episodesList,
-            episodesList.html(action.payload),
-            '#modalList',
-          );
-          home.showModal();
-          setTimeout(function () {
-            home.showContent();
-          }, 1000);
-        }, 1300);
+        helper.animateAndRender(action, character, episodesList);
       }
     },
-  },
-  getState: function () {
-    return Object.assign({}, this.appState);
+    showOrigin: function (action) {
+      if (action.name === 'showOrigin') {
+        helper.animateAndRender(action, origin, charactersList);
+      }
+    },
   },
 };
