@@ -266,6 +266,14 @@ hr {
   margin: 5px;
   text-align: left;
 }
+.modal-episodes__name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.modal-episodes__code {
+  margin-top: 5px;
+}
 
 /* Keyframes styles */
 @keyframes showModal {

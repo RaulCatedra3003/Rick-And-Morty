@@ -24,7 +24,7 @@ export const actions = {
       });
   },
   showEpisode: function (e) {
-    get.data($(e.target).parent().data('episode')).then(data1 => {
+    get.data($(e.target).closest('button').data('episode')).then(data1 => {
       const episode = data1;
       const charactersPromises = [];
       episode.data.characters.forEach(element => {
@@ -37,7 +37,7 @@ export const actions = {
     });
   },
   showCharacter: function (e) {
-    get.data($(e.target).parent().data('character')).then(data1 => {
+    get.data($(e.target).closest('button').data('character')).then(data1 => {
       const character = data1;
       const episodesPromises = [];
       character.data.episode.forEach(element => {
