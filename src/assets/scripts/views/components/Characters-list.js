@@ -22,7 +22,4 @@ export const charactersList = {
   addEventListeners: function () {
     $('.modal-characters__img').on('click', actions.showCharacter);
   },
-  removeEventListeners: function () {
-    $('.modal-characters__img').off('click', actions.showCharacter);
-  },
 };

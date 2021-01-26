@@ -92,7 +92,6 @@ export const store = {
     },
     showCharacter: function (action) {
       if (action.name === 'showCharacter') {
-        charactersList.removeEventListeners();
         store.appState.modal = 'open';
         store.appState.sideBar = 'open';
         home.hiddeSideBar();

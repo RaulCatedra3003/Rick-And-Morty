@@ -19,5 +19,4 @@ export const episodesList = {
   addEventListeners: function () {
     $('.modal-episodes').on('click', actions.showEpisode);
   },
-  //TODO eliminar el escuchador;
 };
