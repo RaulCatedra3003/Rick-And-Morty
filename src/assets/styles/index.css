@@ -189,7 +189,6 @@ hr {
 .modal-episode__list-title {
   width: 100%;
   position: relative;
-  left: 60px;
   font-size: 1.4em;
   font-weight: bold;
 }
@@ -230,6 +229,43 @@ hr {
 .characters-content__status {
   margin-top: 5px;
 }
+.modal-character {
+  color: #070707;
+  text-align: left;
+  margin: 10px 60px;
+  width: 80%;
+}
+.modal-character__flex {
+  display: flex;
+  flex-direction: column;
+}
+.modal-character__img {
+  width: 150px;
+  height: 150px;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.character-content__name {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 5px 0;
+}
+.character-content__status,
+.character-content__gender {
+  margin: 5px 0;
+}
+.character-content__origin {
+  cursor: pointer;
+}
+.modal-episodes {
+  width: 150px;
+  height: 80px;
+  margin: 5px;
+  text-align: left;
+}
 
 /* Keyframes styles */
 @keyframes showModal {
@@ -250,5 +286,21 @@ hr {
   100% {
     width: 0%;
     height: 0%;
+  }
+}
+
+/* Media query styles */
+@media screen and (min-width: 600px) {
+  .modal-character__flex {
+    flex-direction: row;
+  }
+  .character-content {
+    margin-left: 20px;
+  }
+  .character-content__origin {
+    margin: 10px 0;
+  }
+  .modal-character__img {
+    margin-bottom: 20px;
   }
 }
